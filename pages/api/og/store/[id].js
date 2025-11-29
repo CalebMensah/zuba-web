@@ -5,6 +5,7 @@ export const config = {
 };
 
 export default async function handler(req) {
+  console.log('store id:', id)
   const { id } = req.query;
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/stores/${id}`);
   if (!res.ok) return new Response('Store not found', { status: 404 });
