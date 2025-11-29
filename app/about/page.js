@@ -1,5 +1,7 @@
-import React from 'react';
-import { ShoppingCart, Store, Shield, Star, Users, Package, MessageCircle, Heart, Rocket, Info, Mail, Globe, Facebook, Twitter, Instagram, Linkedin, CheckCircle } from 'lucide-react';
+"use client";
+
+import React, {useState} from 'react';
+import { ShoppingCart, Store, Shield, Star, Users, Package, MessageCircle, Heart, Rocket, Info, Mail, Globe, Facebook, Twitter, Instagram, Linkedin, CheckCircle, Menu, X } from 'lucide-react';
 
 export default function AboutPage() {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
