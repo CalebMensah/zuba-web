@@ -47,11 +47,11 @@ export default function ZubaHomepage() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Home</a>
-              <a href="#about" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">About</a>
-              <a href="#features" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Features</a>
-              <a href="#faq" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">FAQ</a>
-              <a href="#contact" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Contact</a>
+              <a href="/" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Home</a>
+              <a href="/about" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">About</a>
+              <a href="/features" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Features</a>
+              <a href="/faq" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">FAQ</a>
+              <a href="/contact" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Contact</a>
               <button className="w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 mt-2">
                 Download App
               </button>
@@ -306,16 +306,16 @@ export default function ZubaHomepage() {
             <div>
               <h4 className="font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#about" className="hover:text-white">About Us</a></li>
-                <li><a href="#contact" className="hover:text-white">Contact</a></li>
-                <li><a href="#faq" className="hover:text-white">FAQ</a></li>
+                <li><a href="/about" className="hover:text-white">About Us</a></li>
+                <li><a href="/contact" className="hover:text-white">Contact</a></li>
+                <li><a href="/faq" className="hover:text-white">FAQ</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Legal</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#terms" className="hover:text-white">Terms & Conditions</a></li>
-                <li><a href="#privacy" className="hover:text-white">Privacy Policy</a></li>
+                <li><a href="/terms" className="hover:text-white">Terms & Conditions</a></li>
+                <li><a href="/privacy" className="hover:text-white">Privacy Policy</a></li>
               </ul>
             </div>
             <div>
