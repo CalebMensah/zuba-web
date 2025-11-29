@@ -80,20 +80,7 @@ export default function ZubaHomepage() {
                   Learn More
                 </button>
               </div>
-              <div className="mt-8 flex items-center gap-8">
-                <div>
-                  <div className="text-3xl font-bold text-blue-600">10k+</div>
-                  <div className="text-gray-600">Active Users</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-red-500">5k+</div>
-                  <div className="text-gray-600">Products</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-green-500">500+</div>
-                  <div className="text-gray-600">Sellers</div>
-                </div>
-              </div>
+
             </div>
             <div className="relative">
               <div className="bg-linear-to-br from-blue-400 to-blue-600 rounded-3xl p-8 shadow-2xl">
@@ -348,3 +335,19 @@ export default function ZubaHomepage() {
     </div>
   );
 }
+
+
+
+{/*
+              <div className="mt-8 flex items-center gap-8">
+                <div>
+                  <div className="text-3xl font-bold text-red-500">5k+</div>
+                  <div className="text-gray-600">Products</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-green-500">500+</div>
+                  <div className="text-gray-600">Sellers</div>
+                </div>
+              </div>
+
+  */}
