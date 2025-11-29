@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ShoppingCart, Store, Shield, Star, TrendingUp, Package, CreditCard, Users, ChevronRight, Menu, X } from 'lucide-react';
+import Link from 'next/link'
 
 export default function ZubaHomepage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -73,9 +74,11 @@ export default function ZubaHomepage() {
                 earn rewards, and discover amazing products from verified sellers.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition flex items-center justify-center text-lg font-semibold">
+                <Link href="/download">
+                  <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition flex items-center justify-center text-lg font-semibold">
                   Get Started <ChevronRight className="ml-2" />
                 </button>
+                </Link>
                 <button className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition text-lg font-semibold">
                   Learn More
                 </button>
