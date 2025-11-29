@@ -9,13 +9,13 @@ export default function DownloadPage() {
 
   const handleDownload = () => {
     setDownloading(true);
-    // Simulate download - replace with actual APK download link
     setTimeout(() => {
-      // window.location.href = '/downloads/zuba.apk';
-      alert('Download will start shortly. Make sure to enable "Install from Unknown Sources" in your device settings.');
+      // Replace this dummy link with your actual Google Drive APK link
+      window.location.href = 'https://drive.google.com/uc?export=download&id=YOUR_DUMMY_ID';
       setDownloading(false);
-    }, 1000);
+    }, 500); // Slight delay for UX
   };
+
 
   const features = [
     { icon: Shield, title: 'Secure Escrow', description: 'Your money protected for 4 days' },
@@ -98,7 +98,8 @@ export default function DownloadPage() {
       <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+
+             <div>
               <div className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 Latest Version 1.0.0
               </div>
@@ -128,20 +129,7 @@ export default function DownloadPage() {
                     </>
                   )}
                 </button>
-
-                <div className="flex gap-4">
-                  <button className="flex-1 bg-gray-900 text-white px-6 py-4 rounded-xl hover:bg-gray-800 transition font-semibold flex items-center justify-center gap-2">
-                    <Apple size={20} />
-                    <span>Coming to iOS</span>
-                  </button>
-                  <button className="flex-1 bg-green-600 text-white px-6 py-4 rounded-xl hover:bg-green-700 transition font-semibold flex items-center justify-center gap-2">
-                    <PlayCircle size={20} />
-                    <span>Play Store Soon</span>
-                  </button>
-                </div>
               </div>
-
-
             </div>
 
             {/* Phone Mockup */}
