@@ -141,21 +141,7 @@ export default function DownloadPage() {
                 </div>
               </div>
 
-              {/* Stats */}
-              <div className="flex gap-6 text-center">
-                <div>
-                  <div className="text-3xl font-bold text-blue-600">10K+</div>
-                  <div className="text-gray-600 text-sm">Downloads</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-green-600">4.8★</div>
-                  <div className="text-gray-600 text-sm">Rating</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-purple-600">2K+</div>
-                  <div className="text-gray-600 text-sm">Sellers</div>
-                </div>
-              </div>
+
             </div>
 
             {/* Phone Mockup */}
@@ -405,3 +391,21 @@ export default function DownloadPage() {
     </div>
   );
 }
+
+{/* 
+              <div className="flex gap-6 text-center">
+                <div>
+                  <div className="text-3xl font-bold text-blue-600">10K+</div>
+                  <div className="text-gray-600 text-sm">Downloads</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-green-600">4.8★</div>
+                  <div className="text-gray-600 text-sm">Rating</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-purple-600">2K+</div>
+                  <div className="text-gray-600 text-sm">Sellers</div>
+                </div>
+              </div>
+  
+  */}

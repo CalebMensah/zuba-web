@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useReact} from 'react';
+import React, {useState} from 'react';
 import { ShoppingCart, FileText, AlertTriangle, Mail, Phone, MapPin, Menu, X } from 'lucide-react';
 
 export default function TermsConditionsPage() {

@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useReact} from 'react';
+import React, {useState} from 'react';
 import { ShoppingCart, Shield, Lock, Mail, Phone, MapPin, Menu, X } from 'lucide-react';
 
 export default function PrivacyPolicyPage() {
