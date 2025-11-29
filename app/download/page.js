@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ShoppingCart, Download, Smartphone, CheckCircle, Shield, Star, Package, Clock, AlertCircle, Apple, PlayCircle } from 'lucide-react';
+import { Menu, X, ShoppingCart, Download, Smartphone, CheckCircle, Shield, Star, Package, Clock, AlertCircle, Apple, PlayCircle } from 'lucide-react';
 
 export default function DownloadPage() {
   const [downloading, setDownloading] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleDownload = () => {
     setDownloading(true);
@@ -66,8 +67,31 @@ export default function DownloadPage() {
               <a href="/contact" className="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
               <a href="/download" className="text-blue-600 font-medium">Download</a>
             </div>
+
+                        {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-gray-700">
+                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
+
+                {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <a href="/" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Home</a>
+              <a href="/about" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">About</a>
+              <a href="/features" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Features</a>
+              <a href="/faq" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">FAQ</a>
+              <a href="/contact" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Contact</a>
+              <button className="w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 mt-2">
+                Download App
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
