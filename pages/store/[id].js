@@ -1,41 +1,46 @@
-import { ImageResponse } from '@vercel/og';
+import Head from "next/head";
 
-export const config = {
-  runtime: 'edge',
-};
+export async function getServerSideProps({ params }) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/stores/${params.id}`);
+  console.log('store id from params:', params.id);
+  console.log('Fetching store data from:', `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/public/store/${params.id}`);
+  console.log('Response status:', res.status);
+  console.log('Response ok:', res.ok);
 
-export default async function handler(req) {
-  const { id } = req.query;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/public/product/${id}`);
-  if (!res.ok) return new Response('Product not found', { status: 404 });
-  const product = await res.json();
+  if (!res.ok) {
+    return { notFound: true };
+  }
 
-  return new ImageResponse(
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
-        height: '100%',
-        background: 'linear-gradient(135deg, #10b981 0%, #3b82f6 100%)',
-        color: 'white',
-        fontSize: 50,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        padding: 50,
-      }}
-    >
-      <img
-        src={product.images[0]}
-        width={200}
-        height={200}
-        style={{ borderRadius: '20px', marginBottom: 40 }}
-      />
-      {product.name}
-      <div style={{ fontSize: 40, marginTop: 20 }}>₵{product.price}</div>
-    </div>,
-    { width: 1200, height: 630 }
+  const store = await res.json();
+  return { props: { store } };
+}
+
+export default function StorePage({ store }) {
+  const ogImage = store.logo || `${process.env.NEXT_PUBLIC_SITE_URL}/default-og.png`;
+
+  return (
+    <>
+      <Head>
+        <title>{store.name}</title>
+        <meta name="description" content={store.description || "Shop on Zuba"} />
+
+        {/* Social share */}
+        <meta property="og:title" content={store.name} />
+        <meta property="og:description" content={store.description || "Shop on Zuba"} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_SITE_URL}/store/${store.url}`} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+
+      <main style={{ padding: 20 }}>
+        <h1>{store.name}</h1>
+        <p>{store.description}</p>
+        <img src={store.logo} alt="" width="120" />
+        <p>This is the public store preview page.</p>
+        <a href="/download" style={{ color: "blue" }}>Download App</a>
+      </main>
+    </>
   );
 }
