@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 export async function getServerSideProps({ params }) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/stores/s/${params.url}`);
+  const res = await fetch(`https://81bcab4457f6.ngrok-free.app/api/stores/s/${params.url}`);
   console.log('store id from params:', params.url);
   console.log('Fetching store data from:', `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/public/store/${params.url}`);
   console.log('Response status:', res.status);
