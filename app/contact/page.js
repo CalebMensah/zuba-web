@@ -156,7 +156,7 @@ export default function ContactPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Methods</h2>
           <div className="space-y-4">
             <a href={`mailto:${contactEmail}`} className="flex items-center gap-4 bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition group">
-              <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center shrink-0">
                 <Mail className="text-blue-600" size={24} />
               </div>
               <div className="flex-1">
@@ -168,7 +168,7 @@ export default function ContactPage() {
             </a>
 
             <a href={`tel:${phoneNumber}`} className="flex items-center gap-4 bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition group">
-              <div className="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center -shrink-0">
                 <Phone className="text-green-600" size={24} />
               </div>
               <div className="flex-1">
@@ -180,7 +180,7 @@ export default function ContactPage() {
             </a>
 
             <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition group">
-              <div className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#25D36620'}}>
+              <div className="w-14 h-14 rounded-full flex items-center justify-center -shrink-0" style={{backgroundColor: '#25D36620'}}>
                 <MessageCircle className="text-green-600" size={24} />
               </div>
               <div className="flex-1">
@@ -217,7 +217,7 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="bg-blue-50 rounded-xl p-4 flex items-start gap-3">
-              <Info className="text-blue-600 flex-shrink-0" size={20} />
+              <Info className="text-blue-600 shrink-0" size={20} />
               <p className="text-blue-700 font-medium text-sm">
                 We respond to all inquiries within 24 hours
               </p>
@@ -304,7 +304,7 @@ export default function ContactPage() {
             {faqs.map((faq, index) => (
               <div key={index} className="bg-white rounded-2xl p-6 shadow-md">
                 <div className="flex items-start gap-3 mb-3">
-                  <HelpCircle className="text-blue-600 flex-shrink-0 mt-1" size={20} />
+                  <HelpCircle className="text-blue-600 shrink-0 mt-1" size={20} />
                   <h3 className="font-bold text-gray-900">{faq.question}</h3>
                 </div>
                 <p className="text-gray-600 pl-8">{faq.answer}</p>
@@ -318,7 +318,7 @@ export default function ContactPage() {
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="bg-blue-50 rounded-2xl p-6 flex items-start gap-4">
-            <Info className="text-blue-600 flex-shrink-0" size={28} />
+            <Info className="text-blue-600 shrink-0" size={28} />
             <div>
               <h3 className="text-lg font-bold text-blue-900 mb-2">Looking for Help?</h3>
               <p className="text-blue-700">

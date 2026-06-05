@@ -3,7 +3,7 @@ import Head from "next/head";
 import { ShoppingCart, Store, MapPin, Clock, Phone, Mail, Download, Shield, ChevronRight, Instagram, Facebook, Twitter, Package, Star, Award, TrendingUp, Users, CheckCircle } from 'lucide-react';
 
 export async function getServerSideProps({ params }) {
-  const res = await fetch(`https://81bcab4457f6.ngrok-free.app/api/stores/s/${params.url}`);
+  const res = await fetch(`https://zuba-app.onrender.com/api/stores/s/${params.url}`);
   console.log('store id from params:', params.url);
   console.log('Fetching store data from:', `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/public/store/${params.url}`);
   console.log('Response status:', res.status);
@@ -53,18 +53,18 @@ export default function StorePage({ store }) {
               <a href="/" className="text-gray-600 hover:text-gray-900 font-medium hidden sm:block transition">
                 Home
               </a>
-              <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 py-2 sm:px-6 sm:py-2.5 rounded-full hover:from-blue-700 hover:to-blue-800 transition font-semibold flex items-center gap-1 sm:gap-2 shadow-lg shadow-blue-200 text-sm sm:text-base">
+              <a href="/download" className="bg-linear-to-r from-blue-600 to-blue-700 text-white px-3 py-2 sm:px-6 sm:py-2.5 rounded-full hover:from-blue-700 hover:to-blue-800 transition font-semibold flex items-center gap-1 sm:gap-2 shadow-lg shadow-blue-200 text-sm sm:text-base">
                 <Download size={16} className="sm:w-[18px] sm:h-[18px]" />
                 <span className="hidden xs:inline">Get App</span>
                 <span className="xs:hidden">App</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section with Modern Design */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 overflow-hidden">
+      <section className="relative bg-linear-to-br from-blue-600 via-purple-600 to-pink-500 overflow-hidden">
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -135,7 +135,7 @@ export default function StorePage({ store }) {
             {/* Store Logo Card */}
             <div className="relative">
               <div className="w-80 h-80 bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition duration-300">
-                <div className="w-full h-full bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl flex items-center justify-center">
+                <div className="w-full h-full bg-linear-to-br from-blue-50 to-purple-50 rounded-2xl flex items-center justify-center">
                   {store.data.logo ? (
                     <img 
                       src={store.data.logo} 
@@ -170,14 +170,14 @@ export default function StorePage({ store }) {
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
             {/* Location */}
             {store.data.location && (
-              <div className="group hover:shadow-lg transition-all duration-300 p-4 sm:p-6 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl sm:rounded-2xl border border-blue-200/50">
+              <div className="group hover:shadow-lg transition-all duration-300 p-4 sm:p-6 bg-linear-to-br from-blue-50 to-blue-100/50 rounded-xl sm:rounded-2xl border border-blue-200/50">
                 <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-xl flex items-center justify-center shrink-0 shadow-lg">
                     <MapPin className="text-white" size={20} />
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="font-bold text-gray-900 mb-1 sm:mb-2 text-base sm:text-lg">Location</div>
-                    <div className="text-gray-700 text-sm sm:text-base break-words">{store.data.location}</div>
+                    <div className="text-gray-700 text-sm sm:text-base wrap-break-words">{store.data.location}</div>
                   </div>
                 </div>
               </div>
@@ -185,9 +185,9 @@ export default function StorePage({ store }) {
 
             {/* Phone */}
             {store.data.phone && (
-              <div className="group hover:shadow-lg transition-all duration-300 p-4 sm:p-6 bg-gradient-to-br from-green-50 to-green-100/50 rounded-xl sm:rounded-2xl border border-green-200/50">
+              <div className="group hover:shadow-lg transition-all duration-300 p-4 sm:p-6 bg-linear-to-br from-green-50 to-green-100/50 rounded-xl sm:rounded-2xl border border-green-200/50">
                 <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-600 rounded-xl flex items-center justify-center shrink-0 shadow-lg">
                     <Phone className="text-white" size={20} />
                   </div>
                   <div className="min-w-0 flex-1">
@@ -202,9 +202,9 @@ export default function StorePage({ store }) {
 
             {/* Email */}
             {store.data.email && (
-              <div className="group hover:shadow-lg transition-all duration-300 p-4 sm:p-6 bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-xl sm:rounded-2xl border border-purple-200/50">
+              <div className="group hover:shadow-lg transition-all duration-300 p-4 sm:p-6 bg-linear-to-br from-purple-50 to-purple-100/50 rounded-xl sm:rounded-2xl border border-purple-200/50">
                 <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-xl flex items-center justify-center shrink-0 shadow-lg">
                     <Mail className="text-white" size={20} />
                   </div>
                   <div className="min-w-0 flex-1">
@@ -219,9 +219,9 @@ export default function StorePage({ store }) {
 
             {/* Business Hours */}
             {store.data.businessHours && (
-              <div className="group hover:shadow-lg transition-all duration-300 p-4 sm:p-6 bg-gradient-to-br from-orange-50 to-orange-100/50 rounded-xl sm:rounded-2xl border border-orange-200/50">
+              <div className="group hover:shadow-lg transition-all duration-300 p-4 sm:p-6 bg-linear-to-br from-orange-50 to-orange-100/50 rounded-xl sm:rounded-2xl border border-orange-200/50">
                 <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-600 rounded-xl flex items-center justify-center shrink-0 shadow-lg">
                     <Clock className="text-white" size={20} />
                   </div>
                   <div className="min-w-0 flex-1">
@@ -243,7 +243,7 @@ export default function StorePage({ store }) {
                     href={store.data.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-xl flex items-center justify-center transition shadow-lg hover:shadow-xl transform hover:scale-110"
+                    className="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-xl flex items-center justify-center transition shadow-lg hover:shadow-xl transform hover:scale-110"
                   >
                     <Facebook className="text-white" size={20} />
                   </a>
@@ -253,7 +253,7 @@ export default function StorePage({ store }) {
                     href={store.data.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 rounded-xl flex items-center justify-center transition shadow-lg hover:shadow-xl transform hover:scale-110"
+                    className="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 rounded-xl flex items-center justify-center transition shadow-lg hover:shadow-xl transform hover:scale-110"
                   >
                     <Instagram className="text-white" size={20} />
                   </a>
@@ -263,7 +263,7 @@ export default function StorePage({ store }) {
                     href={store.data.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 rounded-xl flex items-center justify-center transition shadow-lg hover:shadow-xl transform hover:scale-110"
+                    className="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 rounded-xl flex items-center justify-center transition shadow-lg hover:shadow-xl transform hover:scale-110"
                   >
                     <Twitter className="text-white" size={20} />
                   </a>
@@ -283,7 +283,7 @@ export default function StorePage({ store }) {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition border border-gray-100 text-center">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-linear-to-br from-blue-500 to-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg">
               <Shield className="text-white" size={28} />
             </div>
             <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">Secure Payments</h3>
@@ -291,7 +291,7 @@ export default function StorePage({ store }) {
           </div>
 
           <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition border border-gray-100 text-center">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-linear-to-br from-yellow-500 to-orange-600 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg">
               <Award className="text-white" size={28} />
             </div>
             <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">Earn Rewards</h3>
@@ -299,7 +299,7 @@ export default function StorePage({ store }) {
           </div>
 
           <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition border border-gray-100 text-center sm:col-span-2 lg:col-span-1">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-linear-to-br from-green-500 to-green-600 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg">
               <Package className="text-white" size={28} />
             </div>
             <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">Fast Delivery</h3>
@@ -310,7 +310,7 @@ export default function StorePage({ store }) {
 
       {/* CTA Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 rounded-2xl sm:rounded-3xl p-8 sm:p-12 overflow-hidden shadow-2xl">
+        <div className="relative bg-linear-to-r from-blue-600 via-purple-600 to-pink-500 rounded-2xl sm:rounded-3xl p-8 sm:p-12 overflow-hidden shadow-2xl">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
               backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
@@ -328,11 +328,11 @@ export default function StorePage({ store }) {
             <p className="text-base sm:text-lg lg:text-xl text-blue-50 mb-8 sm:mb-10 max-w-3xl mx-auto px-4">
               Download the Zuba app and discover thousands of products from verified sellers. Shop with confidence, earn rewards, and enjoy secure transactions.
             </p>
-            <button className="bg-white text-blue-600 px-8 sm:px-10 py-4 sm:py-5 rounded-full hover:bg-gray-50 transition font-bold text-lg sm:text-xl shadow-2xl inline-flex items-center gap-2 sm:gap-3 transform hover:scale-105 mx-auto">
+            <a href="/download" className="bg-white text-blue-600 px-8 sm:px-10 py-4 sm:py-5 rounded-full hover:bg-gray-50 transition font-bold text-lg sm:text-xl shadow-2xl inline-flex items-center gap-2 sm:gap-3 transform hover:scale-105 mx-auto">
               <Download size={24} className="sm:w-7 sm:h-7" />
               <span>Download Zuba Now</span>
               <ChevronRight size={20} className="sm:w-6 sm:h-6" />
-            </button>
+            </a>
           </div>
         </div>
       </section>

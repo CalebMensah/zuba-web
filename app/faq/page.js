@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Menu,X,ShoppingCart, ChevronDown, ChevronUp, Search, HelpCircle, Store, Package, Shield, CreditCard, Users, MessageCircle } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronUp, Search, HelpCircle, Store, Package, Shield, CreditCard, MessageCircle } from 'lucide-react';
+import Image from 'next/image';
 
 export default function FAQPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -9,12 +10,12 @@ export default function FAQPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const categories = [
-    { name: 'General', icon: HelpCircle, color: 'text-blue-600', bgColor: 'bg-blue-50' },
-    { name: 'For Buyers', icon: Package, color: 'text-green-600', bgColor: 'bg-green-50' },
-    { name: 'For Sellers', icon: Store, color: 'text-red-600', bgColor: 'bg-red-50' },
-    { name: 'Payments', icon: CreditCard, color: 'text-purple-600', bgColor: 'bg-purple-50' },
-    { name: 'Security', icon: Shield, color: 'text-orange-600', bgColor: 'bg-orange-50' },
-    { name: 'Support', icon: MessageCircle, color: 'text-indigo-600', bgColor: 'bg-indigo-50' },
+    { name: 'General', icon: HelpCircle, color: 'text-[#3B82F6]', bgColor: 'bg-[#DBEAFE]' },
+    { name: 'For Buyers', icon: Package, color: 'text-[#10B981]', bgColor: 'bg-[#D1FAE5]' },
+    { name: 'For Sellers', icon: Store, color: 'text-[#EF4444]', bgColor: 'bg-[#FEE2E2]' },
+    { name: 'Payments', icon: CreditCard, color: 'text-[#8B5CF6]', bgColor: 'bg-[#EDE9FE]' },
+    { name: 'Security', icon: Shield, color: 'text-[#F59E0B]', bgColor: 'bg-[#FEF3C7]' },
+    { name: 'Support', icon: MessageCircle, color: 'text-[#2563EB]', bgColor: 'bg-[#DBEAFE]' },
   ];
 
   const faqs = [
@@ -186,41 +187,38 @@ export default function FAQPage() {
   })).filter(category => category.faqs.length > 0);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#F5F7FA]">
       {/* Navigation */}
       <nav className="bg-white shadow-sm fixed w-full z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <div className="text-2xl font-bold">
-                <span className="text-blue-600">ZU</span>
-                <span className="text-red-500">BA</span>
-                <ShoppingCart className="inline-block ml-1 text-green-500" size={24} />
-              </div>
+              <Image src="/logo.png" alt="Zuba" width={48} height={48} className="object-contain" />
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="/" className="text-gray-700 hover:text-blue-600 font-medium">Home</a>
-              <a href="/about" className="text-gray-700 hover:text-blue-600 font-medium">About</a>
-              <a href="/faq" className="text-blue-600 font-medium">FAQ</a>
-              <a href="/contact" className="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+              <a href="/" className="text-[#374151] hover:text-[#3B82F6] font-medium transition-colors">Home</a>
+              <a href="/about" className="text-[#374151] hover:text-[#3B82F6] font-medium transition-colors">About</a>
+              <a href="/faq" className="text-[#3B82F6] font-medium">FAQ</a>
+              <a href="/contact" className="text-[#374151] hover:text-[#3B82F6] font-medium transition-colors">Contact</a>
             </div>
 
-                                              {/* Mobile menu button */}
-                      <div className="md:hidden">
-                        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-gray-700">
-                          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
-                      </div>
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-[#374151]">
+                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
+
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="/" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Home</a>
-              <a href="/about" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">About</a>
-              <a href="/faq" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">FAQ</a>
-              <a href="/contact" className="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Contact</a>
-              <button className="w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 mt-2">
+              <a href="/" className="block px-3 py-2 text-[#374151] hover:bg-[#DBEAFE] rounded">Home</a>
+              <a href="/about" className="block px-3 py-2 text-[#374151] hover:bg-[#DBEAFE] rounded">About</a>
+              <a href="/faq" className="block px-3 py-2 text-[#374151] hover:bg-[#DBEAFE] rounded">FAQ</a>
+              <a href="/contact" className="block px-3 py-2 text-[#374151] hover:bg-[#DBEAFE] rounded">Contact</a>
+              <button className="w-full bg-[#3B82F6] text-white px-6 py-2 rounded-lg hover:bg-[#2563EB] mt-2 transition-colors">
                 Download App
               </button>
             </div>
@@ -229,26 +227,26 @@ export default function FAQPage() {
       </nav>
 
       {/* Header */}
-      <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-white">
+      <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#DBEAFE] to-white">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <HelpCircle className="text-blue-600" size={40} />
+          <div className="w-20 h-20 bg-[#DBEAFE] rounded-full flex items-center justify-center mx-auto mb-6">
+            <HelpCircle className="text-[#3B82F6]" size={40} />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h1>
-          <p className="text-lg text-gray-600 mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-4">Frequently Asked Questions</h1>
+          <p className="text-lg text-[#6B7280] mb-8">
             Find answers to common questions about using Zuba
           </p>
 
           {/* Search Bar */}
           <div className="max-w-2xl mx-auto">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#9CA3AF]" size={20} />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search for answers..."
-                className="w-full pl-12 pr-4 py-4 bg-white border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent shadow-md"
+                className="w-full pl-12 pr-4 py-4 bg-white border border-[#D1D5DB] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:border-transparent shadow-md"
               />
             </div>
           </div>
@@ -258,7 +256,7 @@ export default function FAQPage() {
       {/* Categories Overview */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Browse by Category</h2>
+          <h2 className="text-2xl font-bold text-[#111827] mb-6 text-center">Browse by Category</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {categories.map((category, index) => {
               const Icon = category.icon;
@@ -272,8 +270,8 @@ export default function FAQPage() {
                   <div className={`w-12 h-12 ${category.bgColor} rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition`}>
                     <Icon className={category.color} size={24} />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-1">{category.name}</h3>
-                  <p className="text-sm text-gray-600">{count} questions</p>
+                  <h3 className="font-semibold text-[#111827] mb-1">{category.name}</h3>
+                  <p className="text-sm text-[#6B7280]">{count} questions</p>
                 </a>
               );
             })}
@@ -286,9 +284,9 @@ export default function FAQPage() {
         <div className="max-w-4xl mx-auto space-y-12">
           {faqsByCategory.length === 0 ? (
             <div className="text-center py-12">
-              <HelpCircle className="mx-auto text-gray-400 mb-4" size={48} />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">No results found</h3>
-              <p className="text-gray-600">Try searching with different keywords</p>
+              <HelpCircle className="mx-auto text-[#9CA3AF] mb-4" size={48} />
+              <h3 className="text-xl font-semibold text-[#111827] mb-2">No results found</h3>
+              <p className="text-[#6B7280]">Try searching with different keywords</p>
             </div>
           ) : (
             faqsByCategory.map((category, categoryIndex) => {
@@ -299,14 +297,14 @@ export default function FAQPage() {
                     <div className={`w-12 h-12 ${category.bgColor} rounded-full flex items-center justify-center`}>
                       <Icon className={category.color} size={24} />
                     </div>
-                    <h2 className="text-3xl font-bold text-gray-900">{category.name}</h2>
+                    <h2 className="text-3xl font-bold text-[#111827]">{category.name}</h2>
                   </div>
-                  
+
                   <div className="space-y-4">
                     {category.faqs.map((faq, faqIndex) => {
                       const globalIndex = faqs.findIndex(f => f === faq);
                       const isOpen = openIndex === globalIndex;
-                      
+
                       return (
                         <div
                           key={faqIndex}
@@ -314,19 +312,19 @@ export default function FAQPage() {
                         >
                           <button
                             onClick={() => toggleAccordion(globalIndex)}
-                            className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition"
+                            className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#F9FAFB] transition"
                           >
-                            <span className="font-semibold text-gray-900 pr-4">{faq.question}</span>
+                            <span className="font-semibold text-[#111827] pr-4">{faq.question}</span>
                             {isOpen ? (
-                              <ChevronUp className="text-blue-600 flex-shrink-0" size={24} />
+                              <ChevronUp className="text-[#3B82F6] flex-shrink-0" size={24} />
                             ) : (
-                              <ChevronDown className="text-gray-400 flex-shrink-0" size={24} />
+                              <ChevronDown className="text-[#9CA3AF] flex-shrink-0" size={24} />
                             )}
                           </button>
-                          
+
                           {isOpen && (
-                            <div className="px-6 pb-5 pt-2">
-                              <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                            <div className="px-6 pb-5 pt-2 border-t border-[#F3F4F6]">
+                              <p className="text-[#374151] leading-relaxed">{faq.answer}</p>
                             </div>
                           )}
                         </div>
@@ -343,22 +341,22 @@ export default function FAQPage() {
       {/* Still Need Help */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl p-12">
-            <MessageCircle className="mx-auto text-blue-600 mb-6" size={48} />
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Still need help?</h2>
-            <p className="text-lg text-gray-700 mb-8">
+          <div className="bg-gradient-to-r from-[#DBEAFE] to-[#EDE9FE] rounded-3xl p-12">
+            <MessageCircle className="mx-auto text-[#3B82F6] mb-6" size={48} />
+            <h2 className="text-3xl font-bold text-[#111827] mb-4">Still need help?</h2>
+            <p className="text-lg text-[#374151] mb-8">
               Can't find the answer you're looking for? Our support team is here to help!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition font-semibold"
+                className="bg-[#3B82F6] text-white px-8 py-4 rounded-xl hover:bg-[#2563EB] transition-colors font-semibold"
               >
                 Contact Support
               </a>
               <a
                 href="mailto:zubamobileapp@gmail.com"
-                className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-xl hover:bg-blue-50 transition font-semibold"
+                className="bg-white text-[#3B82F6] border-2 border-[#3B82F6] px-8 py-4 rounded-xl hover:bg-[#DBEAFE] transition-colors font-semibold"
               >
                 Email Us
               </a>
@@ -368,43 +366,39 @@ export default function FAQPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-[#111827] text-white py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="text-2xl font-bold mb-4">
-                <span className="text-blue-400">ZU</span>
-                <span className="text-red-400">BA</span>
-              </div>
-              <p className="text-gray-400">Buy and sell with trust</p>
+              <Image src="/logo.png" alt="Zuba" width={48} height={48} className="object-contain mb-4" />
+              <p className="text-[#9CA3AF]">Buy and sell with trust</p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="/about" className="hover:text-white">About Us</a></li>
-                <li><a href="/contact" className="hover:text-white">Contact</a></li>
-                <li><a href="/faq" className="hover:text-white">FAQ</a></li>
+              <ul className="space-y-2 text-[#9CA3AF]">
+                <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
+                <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
+                <li><a href="/faq" className="hover:text-white transition-colors">FAQ</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="/terms" className="hover:text-white">Terms of Service</a></li>
-                <li><a href="/privacy" className="hover:text-white">Privacy Policy</a></li>
+              <ul className="space-y-2 text-[#9CA3AF]">
+                <li><a href="/terms" className="hover:text-white transition-colors">Terms of Service</a></li>
+                <li><a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Connect</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="https://facebook.com/zubaapp" className="hover:text-white">Facebook</a></li>
-                <li><a href="https://twitter.com/zubaapp" className="hover:text-white">Twitter</a></li>
-                <li><a href="https://instagram.com/zubaapp" className="hover:text-white">Instagram</a></li>
+              <ul className="space-y-2 text-[#9CA3AF]">
+                <li><a href="https://facebook.com/zubaapp" className="hover:text-white transition-colors">Facebook</a></li>
+                <li><a href="https://twitter.com/zubaapp" className="hover:text-white transition-colors">Twitter</a></li>
+                <li><a href="https://instagram.com/zubaapp" className="hover:text-white transition-colors">Instagram</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center">
-            <p className="text-gray-400 mb-2">&copy; 2024 Zuba. All rights reserved.</p>
-            <p className="text-gray-500 text-sm">Made with ❤️ in Ghana</p>
+          <div className="border-t border-[#374151] pt-8 text-center">
+            <p className="text-[#9CA3AF]">&copy; 2024 Zuba. All rights reserved.</p>
           </div>
         </div>
       </footer>
